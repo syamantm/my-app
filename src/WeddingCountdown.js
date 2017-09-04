@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Countdown from 'react-cntdwn';
+import DocumentTitle from 'react-document-title';
 import logo from './wedding.png';
 import './App.css';
 
@@ -16,22 +17,24 @@ class WeddingCountdown extends Component {
 
     render() {
         return (
-            <div className="App">
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h2>Mukherjee</h2>
+            <DocumentTitle title='Mr & Ms Mukherjee'>
+                <div className="App">
+                    <div className="App-header">
+                        <img src={logo} className="App-logo" alt="logo" />
+                        <h2>Mukherjee</h2>
+                    </div>
+
+                    <p className="App-intro">
+
+                        <Countdown className="timer" targetDate={new Date('November 28, 2017')}
+                           interval={1000}
+                           format = {this.end}
+                           timeSeparator={'  '}
+                           leadingZero
+                           />
+                    </p>
                 </div>
-
-                <p className="App-intro">
-
-                    <Countdown className="timer" targetDate={new Date('November 28, 2017')}
-                       interval={1000}
-                       format = {this.end}
-                       timeSeparator={'  '}
-                       leadingZero
-                       />
-                </p>
-            </div>
+            </DocumentTitle>
         );
     }
 }
