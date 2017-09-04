@@ -12,3 +12,9 @@ Below you will find some information on how to perform common tasks.<br>
 ```bash
 git push heroku master
 ```
+
+### Open the app on browser
+
+```bash
+heroku open
+```
